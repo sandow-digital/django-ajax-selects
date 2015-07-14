@@ -208,4 +208,11 @@
     });
   });
 
+  $(window).load(function() {
+
+    $('.inline-group ul.tools a.add, .inline-group div.add-row a, .inline-group .tabular tr.add-row td a').on('click', function() {
+      $(window).trigger('init-autocomplete');
+    });
+  });
+
 })(window.jQuery);
