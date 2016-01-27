@@ -174,7 +174,7 @@
   // activate any on page
   $(window).bind('init-autocomplete', function () {
 
-    $('input[data-ajax-select=autocomplete]').each(function (i, inp) {
+    $('input[data-ajax-select=autocomplete][value=""]').each(function (i, inp) {
       addAutoComplete(inp, function ($inp, opts) {
         opts.select =
             function (event, ui) {
@@ -185,13 +185,13 @@
       });
     });
 
-    $('input[data-ajax-select=autocompleteselect]').each(function (i, inp) {
+    $('input[data-ajax-select=autocompleteselect][value=""]').each(function (i, inp) {
       addAutoComplete(inp, function ($inp, opts) {
         $inp.autocompleteselect(opts);
       });
     });
 
-    $('input[data-ajax-select=autocompleteselectmultiple]').each(function (i, inp) {
+    $('input[data-ajax-select=autocompleteselectmultiple][value=""]').each(function (i, inp) {
       addAutoComplete(inp, function ($inp, opts) {
         $inp.autocompleteselectmultiple(opts);
       });
