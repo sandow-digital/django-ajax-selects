@@ -3,7 +3,11 @@ from ajax_select.registry import registry
 from django import forms
 from django.conf import settings
 from django.contrib.contenttypes.models import ContentType
-from django.core.urlresolvers import reverse
+try:
+    from django.urls import reverse
+except ImportError:
+    # < django 1.10
+    from django.core.urlresolvers import reverse
 try:
     from django.forms.utils import flatatt
 except ImportError:
