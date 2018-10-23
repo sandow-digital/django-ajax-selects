@@ -411,7 +411,7 @@ def autoselect_fields_check_can_add(form, model, user):
     """
     for name, form_field in form.declared_fields.items():
         if isinstance(form_field, (AutoCompleteSelectMultipleField, AutoCompleteSelectField)):
-            db_field = model._meta.get_field_by_name(name)[0]
+            db_field = model._meta.get_field(name)[0]
             form_field.check_can_add(user, db_field.rel.to)
 
 
