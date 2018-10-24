@@ -412,7 +412,7 @@ def autoselect_fields_check_can_add(form, model, user):
     for name, form_field in form.declared_fields.items():
         if isinstance(form_field, (AutoCompleteSelectMultipleField, AutoCompleteSelectField)):
             db_field = model._meta.get_field(name)
-            form_field.check_can_add(user, db_field.rel.to)
+            form_field.check_can_add(user, db_field.remote_field.model)
 
 
 def plugin_options(lookup, channel_name, widget_plugin_options, initial):
