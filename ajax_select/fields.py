@@ -62,7 +62,7 @@ class AutoCompleteSelectWidget(forms.widgets.TextInput):
         self.help_text = help_text
         self.show_help_text = show_help_text
 
-    def render(self, name, value, attrs=None):
+    def render(self, name, value, attrs=None, renderer=None):
         value = value or ''
         final_attrs = self.build_attrs(attrs)
         self.html_id = final_attrs.pop('id', name)
@@ -176,7 +176,7 @@ class AutoCompleteSelectMultipleWidget(forms.widgets.SelectMultiple):
         self.show_help_text = show_help_text
         self.plugin_options = plugin_options
 
-    def render(self, name, value, attrs=None):
+    def render(self, name, value, attrs=None, renderer=None):
 
         if value is None:
             value = []
@@ -326,7 +326,7 @@ class AutoCompleteWidget(forms.TextInput):
 
         super(AutoCompleteWidget, self).__init__(*args, **kwargs)
 
-    def render(self, name, value, attrs=None):
+    def render(self, name, value, attrs=None, renderer=None):
 
         initial = value or ''
 
