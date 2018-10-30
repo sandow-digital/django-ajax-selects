@@ -218,6 +218,8 @@
 
     $('input[data-ajax-select=autocompleteselectmultiple]').each(function (i, inp) {
       addAutoComplete(inp, function ($inp, opts) {
+        console.log('inp: ' + $inp);
+        console.log('opts: ' + opts);
         $inp.autocompleteselectmultiple(opts);
       });
     });
